@@ -22,10 +22,16 @@ jobs:
       name: clean-bin-folder
       
     - run: ./rebuild_mxe_with_gui_docker.sh
-      name: build-for-windows
+      name: build-for-win64
       
     - uses: actions/upload-artifact@master
       with:
          name: tsMuxer
          path: bin
-      name: upload-artefact
+      name: upload-artefact1
+
+    - uses: actions/upload-artifact@master
+      with:
+         name: tsMuxerGUI
+         path: bin
+      name: upload-artefact2
